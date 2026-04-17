@@ -55,25 +55,21 @@ const products = [
   {
     icon: Atom,
     title: "PRAVI ECO SOLUTIONS",
-    desc: "Eco-friendly biotechnology solutions for sustainability, waste reduction, and efficient industrial processing.",
-    features: [
-      "Reduce • Reuse • Recycle",
-      "Environment friendly",
-      "Cost effective",
-    ],
+    desc: "Eco-friendly biotechnology solutions focused on sustainability, waste reduction, and efficient industrial processing.",
+    features: ["Reduce • Reuse • Recycle", "Environment friendly", "Cost effective"],
     gradient: "linear-gradient(135deg, #00B09B 0%, #96C93D 100%)",
-  },
+  }
 ];
 
 const Products = () => {
   const ref = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
-  const inView = useInView(ref, {
+  const inView = useInView(ref, { 
     once: false,
     margin: "-50px",
     amount: 0.2,
-    triggerOnce: false,
+    triggerOnce: false
   });
 
   useEffect(() => {
@@ -93,19 +89,19 @@ const Products = () => {
       transition: {
         staggerChildren: 0.2,
         delayChildren: 0.1,
-        ease: "easeOut",
+        ease: "easeOut"
       },
     },
   };
 
   const cardVariants = {
-    hidden: {
-      opacity: 0,
+    hidden: { 
+      opacity: 0, 
       x: -100,
       scale: 0.8,
     },
-    visible: {
-      opacity: 1,
+    visible: { 
+      opacity: 1, 
       x: 0,
       scale: 1,
       transition: {
@@ -113,19 +109,15 @@ const Products = () => {
         stiffness: 120,
         damping: 20,
         duration: 0.8,
-        ease: "easeOut",
+        ease: "easeOut"
       },
     },
   };
 
   return (
-    <section
-      id="products"
-      className="py-10 overflow-hidden"
-      ref={ref}
-      style={{ backgroundColor: "#0a2f1f" }}
-    >
+    <section id="products" className="py-10 md:py-10 overflow-hidden" ref={ref} style={{ backgroundColor: '#0a2f1f' }}>
       <div className="container mx-auto px-4 lg:px-8">
+        
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -133,15 +125,12 @@ const Products = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold uppercase tracking-wider text-green-400">
-            Our Products
-          </span>
+          <span className="text-sm font-semibold uppercase tracking-wider text-green-400">Our Products</span>
           <h2 className="text-3xl md:text-4xl font-display font-bold mt-3 text-white">
             Sustainable Biotech Products
           </h2>
           <p className="text-green-100 mt-4 max-w-2xl mx-auto">
-            Explore our range of innovative products designed to support
-            efficiency, quality, and sustainability across industries.
+            Explore our range of innovative products designed to support efficiency, quality, and sustainability across industries.
           </p>
         </motion.div>
 
@@ -160,9 +149,9 @@ const Products = () => {
               whileHover={{
                 scale: 1.08,
                 y: -12,
-                transition: { type: "spring", stiffness: 400, damping: 15 },
+                transition: { type: "spring", stiffness: 400, damping: 15 }
               }}
-              className="group relative rounded-full p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-border/50 overflow-visible  aspect-square flex flex-col items-center text-center"
+              className="group relative rounded-full p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-border/50 overflow-visible cursor-pointer aspect-square flex flex-col items-center text-center"
               style={{ background: p.gradient }}
             >
               <div className="absolute inset-0 bg-black/50 rounded-full" />
@@ -185,21 +174,118 @@ const Products = () => {
 
               <ul className="space-y-1.5 relative z-10 w-full px-2">
                 {p.features.map((f) => (
-                  <li
-                    key={f}
-                    className="flex items-center justify-center gap-2 text-xs text-white/80"
-                  >
+                  <li key={f} className="flex items-center justify-center gap-2 text-xs text-white/80">
                     <div className="w-1.5 h-1.5 rounded-full bg-white" />
                     <span>{f}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <div className="flex items-center gap-1 text-white text-xs font-semibold">
+                  Learn more 
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
+
+      {/* Mobile responsive styles - only affects mobile screens */}
+      <style>{`
+        @media (max-width: 767px) {
+          /* Container padding for mobile */
+          .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+          
+          /* Grid layout for mobile */
+          .grid {
+            gap: 1rem !important;
+          }
+          
+          /* Card styles for mobile */
+          .group {
+            border-radius: 1.5rem !important;
+            aspect-ratio: auto !important;
+            padding: 1.25rem !important;
+          }
+          
+          .group > div:first-child {
+            border-radius: 1.5rem !important;
+          }
+          
+          /* Icon size for mobile */
+          .group .relative.z-10.mb-3.mt-2 > div {
+            padding: 0.75rem !important;
+          }
+          
+          .group svg {
+            width: 2.5rem !important;
+            height: 2.5rem !important;
+          }
+          
+          /* Title size for mobile */
+          .group h3 {
+            font-size: 1rem !important;
+            margin-bottom: 0.5rem !important;
+          }
+          
+          /* Description for mobile */
+          .group .relative.z-10.px-4 {
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+            margin-bottom: 0.5rem !important;
+          }
+          
+          .group .text-white\/90 {
+            font-size: 0.7rem !important;
+          }
+          
+          /* Features for mobile */
+          .group ul {
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+          }
+          
+          .group ul li {
+            font-size: 0.65rem !important;
+          }
+          
+          /* Header text for mobile */
+          .text-center.mb-16 {
+            margin-bottom: 2rem !important;
+          }
+          
+          .text-center.mb-16 h2 {
+            font-size: 1.5rem !important;
+          }
+          
+          .text-center.mb-16 p {
+            font-size: 0.875rem !important;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+          }
+          
+          .text-center.mb-16 span {
+            font-size: 0.7rem !important;
+          }
+          
+          /* Learn more button for mobile */
+          .absolute.bottom-4 {
+            bottom: 0.5rem !important;
+          }
+        }
+        
+        @media (min-width: 768px) and (max-width: 1023px) {
+          /* Tablet adjustments - optional */
+          .grid {
+            gap: 1.5rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

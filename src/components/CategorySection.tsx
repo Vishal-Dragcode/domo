@@ -80,7 +80,7 @@ const categories = [
 
 const CategorySection = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: false, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-50px" });
   const [activeIndex, setActiveIndex] = useState(0);
 
   const nextSlide = () => {
@@ -140,7 +140,7 @@ const CategorySection = () => {
           </motion.p>
         </motion.div>
 
-        <div className="relative max-w-[80%] mx-auto">
+        <div className="relative max-w-full md:max-w-[80%] mx-auto">
           <motion.div
             key={activeIndex}
             initial={{ opacity: 0, x: 100 }}
@@ -152,7 +152,7 @@ const CategorySection = () => {
             <img
               src={activeCategory.image}
               alt={activeCategory.name}
-              className="w-full h-[500px] md:h-[600px] object-cover"
+              className="w-full h-[350px] md:h-[600px] object-cover"
             />
             
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -210,7 +210,7 @@ const CategorySection = () => {
           </div>
         </div>
 
-        <div className="max-w-[80%] mx-auto mt-8">
+        <div className="max-w-full md:max-w-[80%] mx-auto mt-8">
           <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
             {categories.map((category, idx) => (
               <motion.button

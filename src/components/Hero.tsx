@@ -2,7 +2,10 @@ import { motion } from "framer-motion";
 import heroBg from "@/assets/image2.jpg";
 
 const DNAHelix = () => (
-  <svg viewBox="0 0 200 600" className="absolute right-0 top-0 h-full w-48 opacity-10 hidden lg:block">
+  <svg
+    viewBox="0 0 200 600"
+    className="absolute right-0 top-0 h-full w-48 opacity-10 hidden lg:block"
+  >
     {Array.from({ length: 20 }).map((_, i) => {
       const y = i * 30;
       const x1 = 60 + Math.sin(i * 0.5) * 40;
@@ -34,20 +37,24 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      <div className="absolute inset-0">
+    <section
+      id="home"
+      className="relative min-h-[80vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-black"
+    >
+      <div className="absolute inset-0 overflow-hidden">
         <img
           src={heroBg}
           alt="Biotech laboratory"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain object-center"
           width={1920}
           height={1080}
         />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       <DNAHelix />
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-24">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-16 md:pt-20 lg:pt-24 pb-12">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -63,37 +70,39 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="text-2xl md:text-2xl lg:text-5xl font-display font-bold leading-tight mb-2"
+            className="text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-tight mb-3"
             style={{ color: "hsl(0 0% 100%)" }}
           >
-            REDUCE MORE, REUSE SMARTER, RECYCLE BETTER{" "}
+            Reduce More. Reuse Smarter. Recycle Better.
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-lg md:text-sm mb-10 max-w-2xl leading-relaxed"
-            style={{ color: "hsl(0 0% 80%)" }}
+            className="text-base md:text-lg lg:text-xl mb-8 md:mb-10 max-w-2xl leading-relaxed"
+            style={{ color: "hsl(0 0% 95%)" }}
           >
-           Committed to quality and sustainability, we provide biotechnology solutions that create lasting value and build strong customer relationships.
+            Committed to quality and sustainability, we provide biotechnology
+            solutions that create lasting value and build strong customer
+            relationships.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.45 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-col sm:flex-row gap-4"
           >
             <button
               onClick={() => scrollTo("products")}
-              className="gradient-primary text-primary-foreground px-2 py-2 rounded-lg font-semibold text-base hover:opacity-90 transition-all shadow-brand"
+              className="gradient-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold text-base hover:opacity-90 transition-all shadow-brand w-full sm:w-auto"
             >
               Explore Products
             </button>
             <button
               onClick={() => scrollTo("contact")}
-              className="px-2 py-2 rounded-lg font-semibold text-base border-2 transition-all hover:bg-secondary/10"
+              className="px-6 py-3 rounded-lg font-semibold text-base border-2 transition-all hover:bg-secondary/10 w-full sm:w-auto"
               style={{
                 color: "hsl(0 0% 100%)",
                 borderColor: "hsl(0 0% 100% / 0.3)",

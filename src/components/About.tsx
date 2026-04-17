@@ -24,15 +24,15 @@ const values = [
 
 const About = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: false, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-50px" });
   
   const card1Ref = useRef(null);
   const card2Ref = useRef(null);
   const card3Ref = useRef(null);
   
-  const card1InView = useInView(card1Ref, { once: false, margin: "-50px", amount: 0.3 });
-  const card2InView = useInView(card2Ref, { once: false, margin: "-50px", amount: 0.3 });
-  const card3InView = useInView(card3Ref, { once: false, margin: "-50px", amount: 0.3 });
+  const card1InView = useInView(card1Ref, { once: true, margin: "-20px", amount: 0.1 });
+  const card2InView = useInView(card2Ref, { once: true, margin: "-20px", amount: 0.1 });
+  const card3InView = useInView(card3Ref, { once: true, margin: "-20px", amount: 0.1 });
 
   const cardVariants = {
     hidden: { 

@@ -51,72 +51,38 @@ const WhyChooseUs = () => {
         initial={{ scale: 0.95, opacity: 0 }}
         animate={inView ? { scale: 1, opacity: 1 } : {}}
         transition={{ duration: 0.7, delay: 0.2 }}
-        style={{
-          position: "relative",
-          maxWidth: "1400px",
-          height: "auto",
-          minHeight: "550px",
-          margin: "0 auto",
-          borderRadius: "32px",
-          overflow: "hidden",
-          boxShadow: "0 30px 60px rgba(0,0,0,0.15)"
-        }}
+        className="relative max-w-[1400px] mx-auto rounded-[32px] overflow-hidden shadow-2xl flex flex-col lg:block min-h-auto lg:min-h-[600px]"
       >
         {/* LEFT SIDE */}
         <motion.div
           initial={{ opacity: 0, x: -120 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "linear-gradient(135deg, #f0f9ff, #e0f2fe, #bae6fd)",
-            clipPath: "polygon(0 0, 60% 0, 40% 100%, 0% 100%)",
-            zIndex: 2
-          }}
+          className="relative lg:absolute lg:inset-0 z-[2] bg-gradient-to-br from-[#f0f9ff] via-[#e0f2fe] to-[#bae6fd] lg:[clip-path:polygon(0_0,60%_0,40%_100%,0%_100%)]"
         >
           <div
+            className="absolute inset-0 pointer-events-none"
             style={{
-              position: "absolute",
-              inset: 0,
               background: "radial-gradient(circle at 20% 40%, rgba(34,197,94,0.05) 0%, transparent 60%)",
-              pointerEvents: "none"
             }}
           />
 
-          <div
-            style={{
-              position: "relative",
-              zIndex: 2,
-              padding: "60px 50px",
-              maxWidth: "550px",
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center"
-            }}
-          >
+          <div className="relative z-[2] px-6 py-12 md:px-12 lg:px-[50px] lg:py-0 lg:max-w-[550px] h-full flex flex-col justify-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <h2 style={{ 
-                color: "#22c55e", 
-                fontSize: "42px", 
-                fontWeight: 800,
-                fontFamily: "'Syne', sans-serif",
-                marginBottom: "16px"
-              }}>
+              <h2 className="text-3xl md:text-4xl lg:text-[42px] font-extrabold text-[#22c55e] mb-4 font-display">
                 Why Choose Us?
               </h2>
 
-              <p style={{ color: "#1a2b3e", marginBottom: "40px", lineHeight: 1.6, fontSize: "15px", opacity: 0.85 }}>
+              <p className="text-[#1a2b3e] mb-8 text-sm md:text-base leading-relaxed opacity-85">
                 Driven by quality, sustainability, and customer trust.
               </p>
             </motion.div>
 
-            <div>
+            <div className="space-y-5">
               {corePillars.map((item, i) => (
                 <motion.div
                   key={i}
@@ -124,21 +90,15 @@ const WhyChooseUs = () => {
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.6 + i * 0.1 }}
                   whileHover={{ x: 10 }}
-                  style={{
-                    marginBottom: "20px",
-                    cursor: "pointer"
-                  }}
+                  className="cursor-pointer group"
                 >
-                  <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
-                    <div style={{ fontSize: "28px" }}>{item.icon}</div>
+                  <div className="flex items-center gap-4">
+                    <div className="text-2xl md:text-3xl">{item.icon}</div>
                     <div>
-                      <h4 style={{ 
-                        color: "#1a2b3e", 
-                        marginBottom: "4px",
-                        fontSize: "16px",
-                        fontWeight: 700
-                      }}>{item.title}</h4>
-                      <p style={{ fontSize: "13px", color: "#4a5b6e", lineHeight: 1.4 }}>
+                      <h4 className="text-[#1a2b3e] text-base md:text-lg font-bold mb-1">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs md:text-sm text-[#4a5b6e] leading-snug">
                         {item.desc}
                       </p>
                     </div>
@@ -154,53 +114,27 @@ const WhyChooseUs = () => {
           initial={{ opacity: 0, x: 120 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "linear-gradient(135deg, #134e5e, #1a7b6b, #22c55e)",
-            clipPath: "polygon(60% 0, 100% 0, 100% 100%, 40% 100%)",
-            zIndex: 1
-          }}
+          className="relative lg:absolute lg:inset-0 z-[1] bg-gradient-to-br from-[#134e5e] via-[#1a7b6b] to-[#22c55e] lg:[clip-path:polygon(60%_0,100%_0,100%_100%,40%_100%)]"
         >
           <div
+            className="absolute inset-0 pointer-events-none"
             style={{
-              position: "absolute",
-              inset: 0,
               background: "radial-gradient(circle at 80% 30%, rgba(255,255,255,0.12) 0%, transparent 70%)",
-              pointerEvents: "none"
             }}
           />
 
-          <div
-            style={{
-              position: "relative",
-              zIndex: 2,
-              padding: "60px 50px",
-              marginLeft: "auto",
-              maxWidth: "520px",
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center"
-            }}
-          >
+          <div className="relative z-[2] px-6 py-12 md:px-12 lg:px-[50px] lg:py-0 lg:ml-auto lg:max-w-[520px] h-full flex flex-col justify-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.7 }}
-              style={{ textAlign: "right" }}
+              className="text-center lg:text-right"
             >
-              <h2 style={{ 
-                color: "#ffffff", 
-                fontSize: "42px", 
-                fontWeight: 800,
-                fontFamily: "'Syne', sans-serif",
-                marginBottom: "16px"
-              }}>
-                Our Commitment to <span style={{ borderBottom: "3px solid #ffffff" }}>Excellence</span>
+              <h2 className="text-2xl md:text-4xl lg:text-[42px] font-extrabold text-white mb-4 font-display">
+                Our Commitment to <span className="border-b-4 border-white">Excellence</span>
               </h2>
 
-              <p style={{ color: "#ffffff", marginBottom: "40px", lineHeight: 1.6, fontSize: "15px", opacity: 0.95 }}>
+              <p className="text-white mb-10 text-sm md:text-base leading-relaxed opacity-95">
                 Focused on sustainability, innovation, and delivering value-driven biotech solutions.
               </p>
             </motion.div>
@@ -209,24 +143,19 @@ const WhyChooseUs = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.9 }}
-              style={{ display: "flex", gap: "30px", justifyContent: "flex-end", flexWrap: "wrap" }}
+              className="flex gap-6 md:gap-8 justify-center lg:justify-end flex-wrap"
             >
               {globalFeatures.map((item, i) => (
-                <motion.div key={i} whileHover={{ scale: 1.1 }} style={{ textAlign: "center" }}>
+                <motion.div key={i} whileHover={{ scale: 1.1 }} className="text-center">
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={inView ? { scale: 1 } : {}}
                     transition={{ duration: 0.4, delay: 1.0 + i * 0.1 }}
-                    style={{
-                      color: "#ffffff",
-                      fontWeight: 800,
-                      fontSize: "32px",
-                      fontFamily: "'Syne', sans-serif"
-                    }}
+                    className="text-white font-extrabold text-2xl md:text-4xl font-display"
                   >
                     {item.metric}
                   </motion.div>
-                  <div style={{ fontSize: "13px", color: "#ffffff", marginTop: "6px", opacity: 0.9 }}>
+                  <div className="text-xs md:text-sm text-white mt-1 opacity-90">
                     {item.label}
                   </div>
                 </motion.div>
@@ -237,12 +166,9 @@ const WhyChooseUs = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 1.2 }}
-              style={{
-                marginTop: "40px",
-                textAlign: "right"
-              }}
+              className="mt-10 text-center lg:text-right"
             >
-              <p style={{ color: "#ffffff", fontSize: "13px", fontWeight: 500, opacity: 0.9 }}>
+              <p className="text-white text-xs md:text-sm font-medium opacity-90">
                 ✓ Customer satisfaction is our core value
               </p>
             </motion.div>
@@ -253,14 +179,7 @@ const WhyChooseUs = () => {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 1, delay: 0.8 }}
-          style={{
-            position: "absolute",
-            inset: 0,
-            borderRadius: "32px",
-            border: "1px solid rgba(0,0,0,0.08)",
-            pointerEvents: "none",
-            zIndex: 3
-          }}
+          className="absolute inset-0 rounded-[32px] border border-black/5 pointer-events-none z-[3]"
         />
       </motion.div>
     </motion.section>
