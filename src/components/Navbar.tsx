@@ -28,12 +28,12 @@ const Navbar = () => {
         scrolled ? "glass shadow-card" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8">
+      <div className="container mx-auto flex items-center justify-between py-2 px-4 lg:px-8">
         <button onClick={() => scrollTo("home")} className="flex items-center gap-2">
           <img 
             src={logo} 
             alt="PRAVI Logo" 
-            className="h-20 w-auto object-contain"
+            className="h-10 w-auto object-contain"
           />
           <div className="flex flex-col items-start">
             <span className={`text-xl font-bold transition-colors duration-300 ${scrolled ? "text-foreground" : "text-white"}`}>
@@ -59,7 +59,7 @@ const Navbar = () => {
           ))}
           <button
             onClick={() => scrollTo("contact")}
-            className="gradient-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
+            className="gradient-primary text-primary-foreground px-5 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
           >
             Get Started
           </button>
