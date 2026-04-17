@@ -61,7 +61,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-primary-foreground/40">
-            © {new Date().getFullYear()} Pravi Biotechnologies. Built on trust, driven by science.
+            © {new Date().getFullYear()} Pravi Bio Technologies. Built on trust, driven by science.
           </p>
           <div className="flex gap-4">
             {["LinkedIn", "Twitter", "Facebook"].map((s) => (
@@ -71,11 +71,13 @@ const Footer = () => {
             ))}
           </div>
         </div>
+        
+        <div className="text-center mt-6">
+          <p className="text-[10px] text-primary-foreground/30">Developed by RajYug IT Solutions & private limited</p>
+        </div>
       </div>
     </footer>
   );
 };
-
-
 
 export default Footer;
