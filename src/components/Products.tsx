@@ -68,19 +68,15 @@ const Products = () => {
   const inView = useInView(ref, { 
     once: false,
     margin: "-50px",
-    amount: 0.2,
+    amount: 0.1,
     triggerOnce: false
   });
 
   useEffect(() => {
-    if (inView) {
+    if (inView && !hasAnimated) {
       setHasAnimated(true);
-      const timer = setTimeout(() => {
-        setHasAnimated(false);
-      }, 500);
-      return () => clearTimeout(timer);
     }
-  }, [inView]);
+  }, [inView, hasAnimated]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -121,7 +117,7 @@ const Products = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
@@ -135,10 +131,10 @@ const Products = () => {
         </motion.div>
 
         <motion.div
-          key={inView ? "visible" : "hidden"}
+          key="products-grid"
           variants={containerVariants}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          animate={hasAnimated || inView ? "visible" : "hidden"}
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {products.map((p, i) => (
@@ -182,10 +178,7 @@ const Products = () => {
               </ul>
 
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <div className="flex items-center gap-1 text-white text-xs font-semibold">
-                  Learn more 
-                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
-                </div>
+                
               </div>
             </motion.div>
           ))}

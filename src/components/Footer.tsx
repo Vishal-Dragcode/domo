@@ -8,7 +8,11 @@ const Footer = () => {
   return (   
     <footer className="bg-foreground py-16">
       <div className="container mx-auto px-4 lg:px-8">
+        
+        {/* Top Grid */}
         <div className="grid md:grid-cols-4 gap-10 mb-12">
+          
+          {/* Logo + Description */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div className="gradient-primary rounded-lg p-2">
@@ -21,6 +25,7 @@ const Footer = () => {
             </p>
           </div>
 
+          {/* Links */}
           {[
             { 
               title: "Quick Links", 
@@ -59,22 +64,37 @@ const Footer = () => {
           ))}
         </div>
 
+        {/* Bottom Section */}
         <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-primary-foreground/40">
-            © {new Date().getFullYear()} Pravi Bio Technologies. Built on trust, driven by science.
+            © {new Date().getFullYear()} Pravi Biotechnologies. Built on trust, driven by science.
           </p>
+
           <div className="flex gap-4">
             {["LinkedIn", "Twitter", "Facebook"].map((s) => (
-              <a key={s} href="#" className="text-xs text-primary-foreground/40 hover:text-secondary transition-colors">
+              <a
+                key={s}
+                href="#"
+                className="text-xs text-primary-foreground/40 hover:text-secondary transition-colors"
+              >
                 {s}
               </a>
             ))}
           </div>
         </div>
-        
+
+        {/* ✅ Clickable Developer Credit */}
         <div className="text-center mt-6">
-          <p className="text-[10px] text-primary-foreground/30">Developed by RajYug IT Solutions & private limited</p>
+          <a
+            href="https://www.rajyugsolutions.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[10px] text-primary-foreground/30 hover:text-secondary hover:underline transition-all duration-300"
+          >
+            Developed by RajYug IT Solutions Private Limited
+          </a>
         </div>
+
       </div>
     </footer>
   );

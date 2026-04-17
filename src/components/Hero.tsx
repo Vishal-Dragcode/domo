@@ -45,7 +45,7 @@ const Hero = () => {
         <img
           src={heroBg}
           alt="Biotech laboratory"
-          className="w-full h-full object-contain object-center"
+          className="w-full h-full object-cover object-center"
           width={1920}
           height={1080}
         />

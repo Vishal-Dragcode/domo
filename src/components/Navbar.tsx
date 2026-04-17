@@ -29,18 +29,17 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-2 px-4 lg:px-8">
-        <button onClick={() => scrollTo("home")} className="flex items-center gap-2">
+        <button onClick={() => scrollTo("home")} className="flex items-center gap-1.5">
           <img 
             src={logo} 
             alt="PRAVI Logo" 
-            className="h-10 w-auto object-contain"
+            className="h-14 w-auto object-contain"
           />
           <div className="flex flex-col items-start">
-            <span className={`text-xl font-bold transition-colors duration-300 ${scrolled ? "text-foreground" : "text-white"}`}>
+            <span className={`text-lg font-bold transition-colors duration-300 ${scrolled ? "text-foreground" : "text-white"}`}>
               PRAIVI
             </span>
-            <span className={`text-1xl font-medium transition-colors duration-300 ${scrolled ? "text-muted-foreground" : "text-white/80"}`}>
-              
+            <span className={`text-xl font-medium transition-colors duration-300 ${scrolled ? "text-muted-foreground" : "text-white/80"}`}>
             </span>
           </div>
         </button>
@@ -59,7 +58,7 @@ const Navbar = () => {
           ))}
           <button
             onClick={() => scrollTo("contact")}
-            className="gradient-primary text-primary-foreground px-5 py-1.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
+            className="gradient-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
           >
             Get Started
           </button>
