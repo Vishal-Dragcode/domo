@@ -66,8 +66,7 @@ const Hero = () => {
             className="text-2xl md:text-2xl lg:text-5xl font-display font-bold leading-tight mb-2"
             style={{ color: "hsl(0 0% 100%)" }}
           >
-            Empowering Industries with{" "}
-            <span className="text-secondary">Sustainable Biotechnology</span>
+            REDUCE MORE, REUSE SMARTER, RECYCLE BETTER{" "}
           </motion.h1>
 
           <motion.p
@@ -77,10 +76,7 @@ const Hero = () => {
             className="text-lg md:text-sm mb-10 max-w-2xl leading-relaxed"
             style={{ color: "hsl(0 0% 80%)" }}
           >
-            Build your business with sustainability through our advanced biotech
-            solutions including PRAVI BOOST E, PRAVISAFE R & L, PRAVIFRESH E,
-            PRAVIFEED E, PRAVIMASS, PRAVI DEFOAMER, and PRAVI JUICE B — designed
-            for efficiency, safety, and environmental care.
+           Committed to quality and sustainability, we provide biotechnology solutions that create lasting value and build strong customer relationships.
           </motion.p>
 
           <motion.div
